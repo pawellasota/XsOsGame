@@ -2,6 +2,7 @@ package model;
 
 
 import type.Player;
+import type.Seed;
 
 import java.util.Scanner;
 
@@ -14,28 +15,50 @@ public class Ui {
     }
 
     public static void printBoard(Cell[] board) {
+//        for (Cell cell : board) {
+//            cell.setContent();
+//        }
+//        System.out.println("----------");
+//        System.out.println("|"+board[0].getContent()+"|"+board[1].getContent()+"|"+board[2].getContent());
+//        printCell(board[0].getContent());
+//        System.out.println("----------");
+//        System.out.println("|"+board[3].getContent()+"|"+board[4].getContent()+"|"+board[5].getContent());
+//        System.out.println("----------");
+//        System.out.println("|"+board[6].getContent()+"|"+board[7].getContent()+"|"+board[8].getContent());
+//        System.out.println("----------");
         System.out.println("----------");
-        System.out.println("|"+board[0].getContent()+"|"+board[1].getContent()+"|"+board[2].getContent());
+        printCell(board[0].getContent());
+        printCell(board[1].getContent());
+        printCell(board[2].getContent());
+        System.out.println("");
         System.out.println("----------");
-        System.out.println("|"+board[3].getContent()+"|"+board[4].getContent()+"|"+board[5].getContent());
+        printCell(board[3].getContent());
+        printCell(board[4].getContent());
+        printCell(board[5].getContent());
+        System.out.println("");
         System.out.println("----------");
-        System.out.println("|"+board[6].getContent()+"|"+board[7].getContent()+"|"+board[8].getContent());
+        printCell(board[6].getContent());
+        printCell(board[7].getContent());
+        printCell(board[8].getContent());
+        System.out.println("");
         System.out.println("----------");
     }
 
 
-    public void print(String value) {
+    public static void print(String value) {
         System.out.println(value);
     }
 
-    public void printCell(Player players) {
+    public static void printCell(Seed players) {
         switch (players) {
             case NOUGHT:
-                this.print("O");
+                print("|O|");
                 break;
             case CROSS:
-                this.print("X");
+                print("|X|");
                 break;
+            default:
+                print("| |");
         }
     }
 

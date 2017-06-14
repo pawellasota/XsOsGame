@@ -6,18 +6,18 @@ import type.Seed;
 public class Cell {
 
     Seed content;
-    private int row;
-    private int col;
+//    private int row;
+//    private int col;
 
     public Cell() {
         clear();
     }
 
-    public Cell(int row, int col) {
-        setRow(row);
-        setCol(col);
-        clear();
-    }
+//    public Cell(int row, int col) {
+//        setRow(row);
+//        setCol(col);
+//        clear();
+//    }
 
     public Seed getContent() {
         return content;
@@ -30,27 +30,27 @@ public class Cell {
         this.content = content;
     }
 
-    public int getRow() {
-        return row;
-    }
+//    public int getRow() {
+//        return row;
+//    }
 
-    public void setRow(int row) throws IllegalArgumentException {
-        if (row < 1 || row > 3) {
-            throw new IllegalArgumentException("Incorrect row value");
-        }
-        this.row = row;
-    }
+//    public void setRow(int row) throws IllegalArgumentException {
+//        if (row < 1 || row > 3) {
+//            throw new IllegalArgumentException("Incorrect row value");
+//        }
+//        this.row = row;
+//    }
 
-    public int getCol() {
-        return col;
-    }
+//    public int getCol() {
+//        return col;
+//    }
 
-    public void setCol(int col) throws IllegalArgumentException {
-        if (col < 1 || col > 3) {
-            throw new IllegalArgumentException("Incorrect col value");
-        }
-        this.col = col;
-    }
+//    public void setCol(int col) throws IllegalArgumentException {
+//        if (col < 1 || col > 3) {
+//            throw new IllegalArgumentException("Incorrect col value");
+//        }
+//        this.col = col;
+//    }
 
     public void clear() {
         content = Seed.EMPTY;

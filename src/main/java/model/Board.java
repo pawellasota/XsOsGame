@@ -39,7 +39,7 @@ public class Board {
         return (crossFieldCounter == 3) || (noughtFieldCounter == 3);
     }
 
-    private void markField(Seed seed, int cellNumber) throws InvalidCellNumberException{
+    private void markField(Seed seed, int cellNumber) throws InvalidCellNumberException, ArrayIndexOutOfBoundsException {
         if (this.getCells()[cellNumber].getContent().equals(Seed.EMPTY)) {
             this.getCells()[cellNumber].setContent(seed);
         }
@@ -48,7 +48,23 @@ public class Board {
         }
     }
 
-    Boolean hasWon(Seed seed, int cellNumber) throws InvalidCellNumberException{
+    Boolean allFieldsAreFilled() {
+        for(Cell cell : this.getCells()) {
+            if(cell.getContent() == Seed.EMPTY) {
+                return false;
+            }
+        }
+        return true;
+    }
+
+    Boolean isDraw() {
+        if (this.allFieldsAreFilled()) {
+            return true;
+        }
+        return false;
+    }
+
+    Boolean hasWon(Seed seed, int cellNumber) throws InvalidCellNumberException, ArrayIndexOutOfBoundsException {
         markField(seed, cellNumber);
         for (WinningRowsCoordinates rowCoord : WinningRowsCoordinates.values()) {
             if (isRowFilledWithSameSigns(rowCoord.getCoordinates())) {

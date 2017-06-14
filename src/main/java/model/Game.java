@@ -64,7 +64,7 @@ public class Game {
         this.board.init();
     }
 
-    public void updateGameState(Seed seed, int cellNumber) throws InvalidCellNumberException {
+    public void updateGameState(Seed seed, int cellNumber) throws InvalidCellNumberException, ArrayIndexOutOfBoundsException {
         if (this.getBoard().hasWon(seed, cellNumber)) {
             switch(seed){
                 case CROSS:
@@ -72,7 +72,9 @@ public class Game {
                 case NOUGHT:
                     setCurrentState(GameState.NOUGHT_WON);
             }
-
+        } else if (this.getBoard().isDraw()) {
+            this.setCurrentState(GameState.DRAW);
         }
     }
 }
+
