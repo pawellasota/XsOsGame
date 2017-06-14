@@ -19,6 +19,7 @@ public class Board {
 
     void init() {
         this.cells = new Cell[8];
+        for(int i : )
     }
 
     private Boolean isRowFilledWithSameSigns(int[] cellNumbers) {
@@ -39,7 +40,8 @@ public class Board {
     }
 
     private void markField(Seed seed, int cellNumber) throws InvalidCellNumberException{
-        if (this.getCells()[cellNumber].getContent().equals(Seed.EMPTY)) {
+        System.out.println(this.getCells()[cellNumber].getContent());
+        if (this.getCells()[cellNumber].getContent() == null || this.getCells()[cellNumber].getContent().equals(Seed.EMPTY)) {
             this.getCells()[cellNumber].setContent(seed);
         }
         else {

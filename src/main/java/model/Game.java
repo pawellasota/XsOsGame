@@ -11,7 +11,7 @@ public class Game {
 
     private Board board;
     private GameState currentState;
-    private Player currentPlayer;
+    private Seed currentPlayer;
 
     public Board getBoard() {
         return board;
@@ -25,30 +25,31 @@ public class Game {
         this.currentState = currentState;
     }
 
-    public void setCurrentPlayer(Player currentPlayer) {
+    public void setCurrentPlayer(Seed currentPlayer) {
         this.currentPlayer = currentPlayer;
     }
 
-    public Player getCurrentPlayer() {
+    public Seed getCurrentPlayer() {
         return currentPlayer;
     }
 
 
     public Game() {
+        board = new Board();
     }
 
-    private Player pickPlayer() {
-        Player[] players = Player.values();
+    private Seed pickPlayer() {
+        Seed[] players = Seed.values();
         Random random = new Random();
         return players[random.nextInt(players.length)];
     }
 
     public void changePlayer() {
-        if (this.getCurrentPlayer() == Player.CROSS) {
-            this.setCurrentPlayer(Player.NOUGHT);
+        if (this.getCurrentPlayer() == Seed.CROSS) {
+            this.setCurrentPlayer(Seed.NOUGHT);
         }
         else {
-            this.setCurrentPlayer(Player.CROSS);
+            this.setCurrentPlayer(Seed.CROSS);
         }
     }
 
