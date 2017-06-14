@@ -57,7 +57,7 @@ public class Game {
         this.setCurrentState(GameState.PLAYING);
     }
 
-    public void updateGameState(Seed seed, int cellNumber) throws InvalidCellNumberException{
+    public void updateGameState(Seed seed, int cellNumber) throws InvalidCellNumberException {
         if (this.getBoard().hasWon(seed, cellNumber)) {
             switch(seed){
                 case CROSS:
