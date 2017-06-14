@@ -10,6 +10,7 @@ public class Cell {
     private int col;
 
     public Cell() {
+        clear();
     }
 
     public Cell(int row, int col) {

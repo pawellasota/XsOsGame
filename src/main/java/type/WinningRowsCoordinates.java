@@ -2,14 +2,14 @@ package type;
 
 
 public enum WinningRowsCoordinates {
-    FIRST(1, 2, 3),
-    SECOND(4, 5, 6),
-    THIRD(7, 8, 9),
-    FOURTH(1, 4, 7),
-    FIFTH(2, 5, 8),
-    SIXTH(3, 6, 9),
-    SEVENTH(1, 5, 9),
-    EIGHTH(3, 5, 7);
+    FIRST(0, 1, 2),
+    SECOND(3, 4, 5),
+    THIRD(6, 7, 8),
+    FOURTH(0, 3, 6),
+    FIFTH(1, 4, 7),
+    SIXTH(2, 5, 8),
+    SEVENTH(0, 4, 8),
+    EIGHTH(2, 4, 6);
 
     private final Integer x;
     private final Integer y;

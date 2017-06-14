@@ -13,17 +13,16 @@ public class Ui {
         board = new char[8];
     }
 
-    public void printBoard() {
+    public static void printBoard(Cell[] board) {
         System.out.println("----------");
-        for (int i = 0; i < 3; i++) {
-            System.out.print("| ");
-            for (int j = 0; j < 3; j++) {
-                System.out.print(board[i] + " | ");
-            }
-            System.out.println("");
-            System.out.println("----------");
-        }
+        System.out.println("|"+board[0].getContent()+"|"+board[1].getContent()+"|"+board[2].getContent());
+        System.out.println("----------");
+        System.out.println("|"+board[3].getContent()+"|"+board[4].getContent()+"|"+board[5].getContent());
+        System.out.println("----------");
+        System.out.println("|"+board[6].getContent()+"|"+board[7].getContent()+"|"+board[8].getContent());
+        System.out.println("----------");
     }
+
 
     public void print(String value) {
         System.out.println(value);
@@ -40,19 +39,18 @@ public class Ui {
         }
     }
 
-    public void paint() {
-        for (int row = 0; row < ; ++row) {
-            board[row].this.printCell(Player players);
-            print(" ");
-            if (row < row - 1) {
-                print("-----------");
-            }
-        }
-    }
+//    public void paint() {
+//        for (int row = 0; row < ; ++row) {
+//            board[row].this.printCell(Player players);
+//            print(" ");
+//            if (row < row - 1) {
+//                print("-----------");
+//            }
+//        }
+//    }
 
-    public static int getUserInput(String input) {
+    public static int getUserInput() {
         Scanner user_input = new Scanner(System.in);
-        System.out.print(input);
         return user_input.nextInt();
     }
 

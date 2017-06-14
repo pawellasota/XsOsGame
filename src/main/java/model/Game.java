@@ -35,13 +35,17 @@ public class Game {
 
 
     public Game() {
-        board = new Board();
     }
 
     private Seed pickPlayer() {
         Seed[] players = Seed.values();
         Random random = new Random();
-        return players[random.nextInt(players.length)];
+        Seed randomPlayer;
+        randomPlayer = players[random.nextInt(players.length)];
+        while(randomPlayer == Seed.EMPTY) {
+            randomPlayer = players[random.nextInt(players.length)];
+        }
+        return randomPlayer;
     }
 
     public void changePlayer() {
@@ -56,6 +60,8 @@ public class Game {
     public void initGame() {
         this.setCurrentPlayer(pickPlayer());
         this.setCurrentState(GameState.PLAYING);
+        this.board = new Board();
+        this.board.init();
     }
 
     public void updateGameState(Seed seed, int cellNumber) throws InvalidCellNumberException {

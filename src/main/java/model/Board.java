@@ -13,13 +13,13 @@ public class Board {
     Board() {
     }
 
-    Cell [] getCells() {
+    public Cell [] getCells() {
         return this.cells;
     }
 
     void init() {
-        this.cells = new Cell[8];
-        for(int i : )
+        this.cells = new Cell[] {new Cell(), new Cell(), new Cell(), new Cell(), new Cell(), new Cell()
+                , new Cell(), new Cell(), new Cell()};
     }
 
     private Boolean isRowFilledWithSameSigns(int[] cellNumbers) {
@@ -40,8 +40,7 @@ public class Board {
     }
 
     private void markField(Seed seed, int cellNumber) throws InvalidCellNumberException{
-        System.out.println(this.getCells()[cellNumber].getContent());
-        if (this.getCells()[cellNumber].getContent() == null || this.getCells()[cellNumber].getContent().equals(Seed.EMPTY)) {
+        if (this.getCells()[cellNumber].getContent().equals(Seed.EMPTY)) {
             this.getCells()[cellNumber].setContent(seed);
         }
         else {
