@@ -10,12 +10,12 @@ public class Cell {
     private int col;
 
     public Cell() {
-
     }
 
     public Cell(int row, int col) {
         setRow(row);
         setCol(col);
+        clear();
     }
 
     public Seed getContent() {
@@ -49,5 +49,9 @@ public class Cell {
             throw new IllegalArgumentException("Incorrect col value");
         }
         this.col = col;
+    }
+
+    public void clear() {
+        content = Seed.EMPTY;
     }
 }
