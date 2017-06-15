@@ -1,7 +1,6 @@
 import controller.GameController;
 import model.Game;
 
-
 public class App {
 
     public static void main(String[] args) {

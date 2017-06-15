@@ -1,6 +1,7 @@
-package model;
+package view;
 
 
+import model.Cell;
 import type.Seed;
 
 import java.util.InputMismatchException;

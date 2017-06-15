@@ -3,7 +3,7 @@ package controller;
 import exception.InvalidCellNumberException;
 import model.Board;
 import model.Game;
-import model.Ui;
+import view.Ui;
 import type.GameState;
 import type.Seed;
 import java.util.InputMismatchException;
