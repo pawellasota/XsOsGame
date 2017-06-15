@@ -28,8 +28,4 @@ class GameTest {
         game.setCurrentState(GameState.DRAW);
         assertEquals(GameState.DRAW, game.getCurrentState());
     }
-
-    @Test
-    void testIfMethodPickPlayerFindValidPlayer() {
-    }
 }
