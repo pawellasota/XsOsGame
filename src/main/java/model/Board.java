@@ -17,6 +17,10 @@ public class Board {
         return this.cells;
     }
 
+    public void setCells(Cell[] cells) {
+        this.cells = cells;
+    }
+
     void init() {
         this.cells = new Cell[] {new Cell(), new Cell(), new Cell(), new Cell(), new Cell(), new Cell()
                 , new Cell(), new Cell(), new Cell()};
@@ -39,7 +43,7 @@ public class Board {
         return (crossFieldCounter == 3) || (noughtFieldCounter == 3);
     }
 
-    private void markField(Seed seed, int cellNumber) throws InvalidCellNumberException, ArrayIndexOutOfBoundsException {
+    public void markField(Seed seed, int cellNumber) throws InvalidCellNumberException, ArrayIndexOutOfBoundsException {
         if (this.getCells()[cellNumber].getContent().equals(Seed.EMPTY)) {
             this.getCells()[cellNumber].setContent(seed);
         }
