@@ -3,25 +3,20 @@ package view;
 
 import model.Cell;
 import type.Seed;
-
 import java.util.InputMismatchException;
 import java.util.Scanner;
 
 public class Ui {
 
-    Scanner scanner;
-
     public Ui() {
     }
 
-    public static void printBoard(Cell[] board) {
-
+    public static void printBoard(Cell[] board) throws NullPointerException{
         String boardString = new String(
                 "-------\n|" + printCell(board[0].getContent()) + "|" + printCell(board[1].getContent()) + "|" + printCell(board[2].getContent()) + "|\n" +
                         "-------\n|" + printCell(board[3].getContent()) + "|" + printCell(board[4].getContent()) + "|" + printCell(board[5].getContent()) + "|\n" +
                         "-------\n|" + printCell(board[6].getContent()) + "|" + printCell(board[7].getContent()) + "|" + printCell(board[8].getContent()) + "|\n" +
                         "-------\n");
-
         System.out.println(boardString);
     }
 

@@ -3,10 +3,8 @@ package model;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import view.Ui;
-
 import java.io.ByteArrayOutputStream;
 import java.io.PrintStream;
-
 import static org.junit.jupiter.api.Assertions.*;
 
 class UiTest {
@@ -24,6 +22,14 @@ class UiTest {
     public void testIfGetUserInputWorkProperlyWithInt() {
         System.out.print(String.valueOf(1));
         assertEquals(String.valueOf(1), outContent.toString());
+    }
+
+    @Test
+    void testIfWithoutBoardSetPrintBoardThrowsNullPointerException() throws NullPointerException{
+        Board board = new Board();
+        assertThrows(NullPointerException.class, () -> {
+            Ui.printBoard(board.getCells());
+        });
     }
 
     @Test

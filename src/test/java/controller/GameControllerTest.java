@@ -1,16 +1,25 @@
 package controller;
 
+import exception.InvalidCellNumberException;
 import model.Game;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+import org.mockito.Mock;
+import org.mockito.Mockito;
 import type.GameState;
 import type.Seed;
 import static org.junit.jupiter.api.Assertions.*;
+import static org.mockito.Mockito.mock;
+import static org.mockito.Mockito.when;
 
 
 class GameControllerTest {
     Game game;
     GameController gameController;
+    Game mockedGame = mock(Game.class, Mockito.RETURNS_DEEP_STUBS);
+
+//    @Mock
+//    Game mockedGame;
 
     @BeforeEach
     void setUp() {
@@ -57,5 +66,14 @@ class GameControllerTest {
         this.gameController.updateGameState(Seed.NOUGHT, 6);
         GameState expectedGameState = GameState.NOUGHT_WON;
         assertEquals(expectedGameState, this.game.getCurrentState());
+    }
+
+    @Test
+    void testIfStringInputFromUserThrowsNullPointerException() throws Exception{
+        GameController gameController1 = new GameController(mockedGame);
+        when(mockedGame.getCurrentState()).thenReturn(null);
+        assertThrows(NullPointerException.class, () -> {
+            gameController1.play();
+        });
     }
 }
