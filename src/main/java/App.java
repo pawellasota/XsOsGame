@@ -3,35 +3,39 @@ import model.Game;
 import model.Ui;
 import type.GameState;
 
+import java.util.InputMismatchException;
+
 
 public class App {
 
     public static void main(String[] args) {
         Game game = new Game();
         game.initGame();
-        Integer cellNumber = 0;
         while(game.getCurrentState() == GameState.PLAYING) {
-            System.out.println(game.getCurrentPlayer());
-            cellNumber = Ui.getUserInput();
+            Ui.printRoundInfo(game.getCurrentPlayer());
+            Ui.printBoard(game.getBoard().getCells());
            try {
+               Integer cellNumber = Ui.getUserInput();
                game.updateGameState(game.getCurrentPlayer(), cellNumber);
            } catch (InvalidCellNumberException e){
-               System.out.println("This field is already occupied . Try again");
+               Ui.print("This field is already occupied . Try again");
                continue;
            } catch (ArrayIndexOutOfBoundsException e){
-               System.out.println("Input number out of range. Try again");
+               Ui.print("Input number out of range. Try again");
+               continue;
+           }catch (InputMismatchException e){
+               Ui.print("Wrong input. Only numbers allowed. Try again");
                continue;
            }
            if (game.getCurrentState() == GameState.PLAYING) {
                game.changePlayer();
            }
-            Ui.printBoard(game.getBoard().getCells());
         }
+        Ui.printBoard(game.getBoard().getCells());
         if (game.getCurrentState() == GameState.DRAW) {
             Ui.print("Draw");
         } else {
             Ui.print("Winner is "+game.getCurrentPlayer());
         }
-
     }
 }

@@ -52,7 +52,7 @@ public class Board {
         }
     }
 
-    Boolean allFieldsAreFilled() {
+    public Boolean allFieldsAreFilled() {
         for(Cell cell : this.getCells()) {
             if(cell.getContent() == Seed.EMPTY) {
                 return false;

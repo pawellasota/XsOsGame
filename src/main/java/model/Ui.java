@@ -2,6 +2,8 @@ package model;
 
 
 import type.Seed;
+
+import java.util.InputMismatchException;
 import java.util.Scanner;
 
 public class Ui {
@@ -20,9 +22,12 @@ public class Ui {
         System.out.println(boardString);
     }
 
+    public static void printRoundInfo(Seed player) {
+        System.out.println("Player "+player+" enter your move ([0-9]):");
+    }
 
     public static void print(String value) {
-        System.out.print(value);
+        System.out.println(value);
     }
 
     public static String printCell(Seed players) {
@@ -36,7 +41,7 @@ public class Ui {
         }
     }
 
-    public static int getUserInput() {
+    public static Integer getUserInput() throws InputMismatchException {
         Scanner user_input = new Scanner(System.in);
         return user_input.nextInt();
     }
