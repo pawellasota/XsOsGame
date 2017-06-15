@@ -5,12 +5,10 @@ import exception.InvalidCellNumberException;
 import type.WinningRowsCoordinates;
 import type.Seed;
 
-
 public class Board {
 
     Cell [] cells;
-
-    Board() {
+    public Board() {
     }
 
     public Cell [] getCells() {
@@ -21,7 +19,7 @@ public class Board {
         this.cells = cells;
     }
 
-    void init() {
+    public void init() {
         this.cells = new Cell[] {new Cell(), new Cell(), new Cell(), new Cell(), new Cell(), new Cell(),
                 new Cell(), new Cell(), new Cell()};
     }
@@ -61,14 +59,14 @@ public class Board {
         return true;
     }
 
-    Boolean isDraw() {
+    public Boolean isDraw() {
         if (this.allFieldsAreFilled()) {
             return true;
         }
         return false;
     }
 
-    Boolean hasWon(Seed seed, int cellNumber) throws InvalidCellNumberException, ArrayIndexOutOfBoundsException {
+    public Boolean hasWon(Seed seed, int cellNumber) throws InvalidCellNumberException, ArrayIndexOutOfBoundsException {
         markField(seed, cellNumber);
         for (WinningRowsCoordinates rowCoord : WinningRowsCoordinates.values()) {
             if (isRowFilledWithSameSigns(rowCoord.getCoordinates())) {
@@ -77,5 +75,4 @@ public class Board {
         }
         return false;
     }
-
 }

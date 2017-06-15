@@ -45,17 +45,4 @@ public class Ui {
         Scanner user_input = new Scanner(System.in);
         return user_input.nextInt();
     }
-
-    public void pressAnyKeyToContinue() {
-        this.print("Press any key to continue...");
-        try
-        {
-            System.in.read();
-        }
-        catch(Exception e)
-        {
-
-        }
-
-    }
 }
