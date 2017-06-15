@@ -3,8 +3,9 @@ package model;
 
 import exception.InvalidCellNumberException;
 import type.GameState;
-import type.Player;
 import type.Seed;
+
+import java.util.InputMismatchException;
 import java.util.Random;
 
 public class Game {
@@ -14,13 +15,16 @@ public class Game {
     private Seed currentPlayer;
 
     public Game() {
-//        gameController = new GameController();
     }
 
 
     public Board getBoard() {
         return board;
     }
+
+//    public void setBoard(Board board) {
+//        this.board = board;
+//    }
 
     public GameState getCurrentState() {
         return currentState;
@@ -40,7 +44,7 @@ public class Game {
 
 
 
-    private Seed pickPlayer() {
+    public Seed pickPlayer() {
         Seed[] players = Seed.values();
         Random random = new Random();
         Seed randomPlayer;
@@ -66,6 +70,13 @@ public class Game {
         this.board = new Board();
         this.board.init();
     }
+
+//    public void initGame(Board board) {
+//        this.setCurrentPlayer(pickPlayer());
+//        this.setCurrentState(GameState.PLAYING);
+//        this.board = board;
+//        this.board.init();
+//    }
 
     public void updateGameState(Seed seed, int cellNumber) throws InvalidCellNumberException, ArrayIndexOutOfBoundsException {
         if (this.getBoard().hasWon(seed, cellNumber)) {
