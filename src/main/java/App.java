@@ -1,6 +1,5 @@
 import exception.InvalidCellNumberException;
 import model.Game;
-//import model.Ui;
 import model.Ui;
 import type.GameState;
 
@@ -14,7 +13,7 @@ public class App {
         while(game.getCurrentState() == GameState.PLAYING) {
             System.out.println(game.getCurrentPlayer());
             cellNumber = Ui.getUserInput();
-            try {
+           try {
                game.updateGameState(game.getCurrentPlayer(), cellNumber);
            } catch (InvalidCellNumberException e){
                System.out.println("This field is already occupied . Try again");

@@ -13,6 +13,11 @@ public class Game {
     private GameState currentState;
     private Seed currentPlayer;
 
+    public Game() {
+//        gameController = new GameController();
+    }
+
+
     public Board getBoard() {
         return board;
     }
@@ -34,8 +39,6 @@ public class Game {
     }
 
 
-    public Game() {
-    }
 
     private Seed pickPlayer() {
         Seed[] players = Seed.values();
