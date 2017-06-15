@@ -2,7 +2,6 @@ import exception.InvalidCellNumberException;
 import model.Game;
 import model.Ui;
 import type.GameState;
-
 import java.util.InputMismatchException;
 
 
