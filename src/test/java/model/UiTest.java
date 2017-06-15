@@ -1,6 +1,5 @@
 package model;
 
-import org.junit.jupiter.api.AfterAll;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
@@ -30,7 +29,7 @@ class UiTest {
 
     @Test
     public void testIfPGetUserInputWorkProperlyWithString() {
-        ui.print("hello");
+        System.out.println("hello");
         assertEquals("hello", outContent.toString());
     }
 }

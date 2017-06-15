@@ -29,7 +29,7 @@ public class Ui {
     }
 
     public static void print(String value) {
-        System.out.print(value);
+        System.out.println(value);
     }
 
     public static String printCell(Seed players) {
