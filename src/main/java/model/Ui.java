@@ -10,8 +10,7 @@ public class Ui {
 
     Scanner scanner;
 
-    public Ui(Scanner scanner) {
-        this.scanner = scanner;
+    public Ui() {
     }
 
     public static void printBoard(Cell[] board) {
