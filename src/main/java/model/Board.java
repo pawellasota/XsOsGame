@@ -22,11 +22,11 @@ public class Board {
     }
 
     void init() {
-        this.cells = new Cell[] {new Cell(), new Cell(), new Cell(), new Cell(), new Cell(), new Cell()
-                , new Cell(), new Cell(), new Cell()};
+        this.cells = new Cell[] {new Cell(), new Cell(), new Cell(), new Cell(), new Cell(), new Cell(),
+                new Cell(), new Cell(), new Cell()};
     }
 
-    private Boolean isRowFilledWithSameSigns(int[] cellNumbers) {
+    public Boolean isRowFilledWithSameSigns(int[] cellNumbers) {
         Integer crossFieldCounter = 0;
         Integer noughtFieldCounter = 0;
         for (Integer cellNumber : cellNumbers) {
@@ -43,7 +43,7 @@ public class Board {
         return (crossFieldCounter == 3) || (noughtFieldCounter == 3);
     }
 
-    public void markField(Seed seed, int cellNumber) throws InvalidCellNumberException, ArrayIndexOutOfBoundsException {
+    public void markField(Seed seed, int cellNumber) throws ArrayIndexOutOfBoundsException, InvalidCellNumberException {
         if (this.getCells()[cellNumber].getContent().equals(Seed.EMPTY)) {
             this.getCells()[cellNumber].setContent(seed);
         }
