@@ -12,6 +12,9 @@ public class Ui {
     }
 
     public static void printBoard(Cell[] board) throws NullPointerException{
+        if (board == null) {
+            throw new NullPointerException();
+        }
         String boardString = new String(
                 "-------\n|" + printCell(board[0].getContent()) + "|" + printCell(board[1].getContent()) + "|" + printCell(board[2].getContent()) + "|\n" +
                         "-------\n|" + printCell(board[3].getContent()) + "|" + printCell(board[4].getContent()) + "|" + printCell(board[5].getContent()) + "|\n" +
